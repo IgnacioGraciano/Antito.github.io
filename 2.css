@@ -1,0 +1,101 @@
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #87CEEB;
+    overflow: hidden;
+}
+
+.garden {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.flower {
+    position: absolute;
+    bottom: 0;
+    width: 20px;
+    height: 200px;
+    background-color: #228B22;
+    animation: grow 3s ease-out forwards;
+}
+
+.center {
+    position: absolute;
+    top: -30px;
+    left: -30px;
+    width: 60px;
+    height: 60px;
+    background: radial-gradient(circle, #FFD700 0%, #FFA500 100%);
+    border-radius: 50%;
+    z-index: 2;
+}
+
+.petal {
+    position: absolute;
+    top: -50px;
+    left: -15px;
+    width: 50px;
+    height: 80px;
+    background-color: #FFD700;
+    border-radius: 50%;
+    transform-origin: bottom center;
+    animation: bloom 2s ease-out forwards;
+}
+
+.petal1 { transform: rotate(0deg); }
+.petal2 { transform: rotate(45deg); }
+.petal3 { transform: rotate(90deg); }
+.petal4 { transform: rotate(135deg); }
+.petal5 { transform: rotate(180deg); }
+.petal6 { transform: rotate(225deg); }
+.petal7 { transform: rotate(270deg); }
+.petal8 { transform: rotate(315deg); }
+
+.flower1 { left: 20%; }
+.flower2 { left: 50%; }
+.flower3 { left: 80%; }
+
+.message {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    font-weight: bold;
+    color: #FF69B4;
+    opacity: 0;
+    animation: fadeIn 2s ease-in 5s forwards;
+}
+
+@keyframes grow {
+    from { height: 0; }
+    to { height: 200px; }
+}
+
+@keyframes bloom {
+    from { transform: scale(0) rotate(var(--rotation)); }
+    to { transform: scale(1) rotate(var(--rotation)); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.flower1 .petal { animation-delay: 3s; }
+.flower2 .petal { animation-delay: 3.5s; }
+.flower3 .petal { animation-delay: 4s; }
+
+.petal1 { --rotation: 0deg; }
+.petal2 { --rotation: 45deg; }
+.petal3 { --rotation: 90deg; }
+.petal4 { --rotation: 135deg; }
+.petal5 { --rotation: 180deg; }
+.petal6 { --rotation: 225deg; }
+.petal7 { --rotation: 270deg; }
+.petal8 { --rotation: 315deg; }
